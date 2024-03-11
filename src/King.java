@@ -12,17 +12,22 @@ public class King extends Piece{
 
     }
     public boolean move(Board board, char i, int j){
+        if(move_validator(history.tail.i,history.tail.j,i,j)){
+            if(board.is_occupied(i,j) != null){
+                board.kill(board.is_occupied(i,j));
+            }
+            board.move(this,i,j);
+        }
         return true;
     }
 
     public boolean move_validator(char curr_i, int curr_j, char next_i, int next_j){
         if(Math.abs(next_j-curr_j)>1) return false;
-
-        return true;
+        return Math.abs(next_i - curr_i) <= 1 && !is_check();
     }
 
 
-    public boolean is_check(){
+    private boolean is_check(){
         return true;
     }
 }

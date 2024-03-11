@@ -1,8 +1,8 @@
 package DS;
 
 public class LinkedList {
-    LLNode head;
-    LLNode tail;
+    public LLNode head;
+    public LLNode tail;
     int len;
     public LLNode insert(char i, int j){
         LLNode tbi = new LLNode(i,j);
