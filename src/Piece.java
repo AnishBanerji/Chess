@@ -12,7 +12,7 @@ public abstract class Piece{
         this.history=null;
         this.is_white=is_white;
     }
-    public abstract void start_pos();
+    public abstract void start_pos(Board board);
     public abstract boolean move(Board board, char i, int j);
     public abstract boolean move_validator(char curr_i, int curr_j, char next_i, int next_j);
 }
